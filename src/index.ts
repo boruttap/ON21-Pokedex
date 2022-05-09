@@ -1,5 +1,6 @@
 const container: HTMLElement | any = document.getElementById("app")
 const numberOfPokemon: number = 151
+const inputSearch = document.querySelector('#searchPokemon');
 let dataLoaded = false
 
 interface pokemonData {
@@ -15,7 +16,7 @@ const fetchData = async (): Promise<void> => {
     }
 
     dataLoaded = true
-    showAllPokemon()
+    showAllPokemon(pokemonObjects)
 }
 
 async function getPokemon(id: number): Promise<pokemonData> {
@@ -42,8 +43,8 @@ const showPokemon = (pokemon: pokemonData): void => {
   container.innerHTML += output
 }
 
-function showAllPokemon() {
-
+function showAllPokemon(pokemonObjects:pokemonData[]) {
+    container.innerHTML = ""
     if (dataLoaded) {
         for (let i=0; i < pokemonObjects.length; i++) {
 
@@ -54,4 +55,4 @@ function showAllPokemon() {
         alert("Daten wurde noch nicht geladen.")
     }
 } 
-fetchData() 
+fetchData()
