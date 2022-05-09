@@ -6,6 +6,8 @@ let dataLoaded = false
 interface pokemonData {
     name: string;
     image: string;
+    id: number;
+    type: string;
 }
 
  let pokemonObjects:pokemonData[] = []
@@ -23,12 +25,16 @@ async function getPokemon(id: number): Promise<pokemonData> {
     const newUrl: string = 'https://pokeapi.co/api/v2/pokemon/'.concat(id.toString())
     const data: Response = await fetch(newUrl)
     const pokemons: any = await data.json()
+    const pokemonType: string = pokemons.types
+    .map((poke: any) => poke.type.name)
+    .join(" & ")
 
         const transformedPokemon = {
             name: pokemons.name, 
-            image: pokemons.sprites.front_default.toString(), 
+            image: pokemons.sprites.front_default.toString(),
+            id: pokemons.id,
+            type: pokemonType,
         }
-
 
     return transformedPokemon
 
@@ -38,7 +44,12 @@ const showPokemon = (pokemon: pokemonData): void => {
   let output: string = 
       `<div class="card">
             <img class="cardImage" src=${pokemon.image} alt=${pokemon.name} />
-            <h3 class="cardName">${pokemon.name}</h1>
+            <h3 class="cardName">${pokemon.name}</h3>
+            <div class="cardId">
+            <span>#${pokemon.id}</span>
+            </div>
+            <br>
+            <span class="cardType">${pokemon.type}</span>
        </div>`
   container.innerHTML += output
 }
