@@ -9,6 +9,16 @@ body {
     margin: 0;
 }
 
+.searchField {
+        width: 20%;
+        border: 1px solid rgba(128, 21, 21, 0.5);
+        padding: 20px;
+        height: 20px;
+        border-radius: 5px 5px 5px 5px;
+        outline: none;
+      }
+
+
 #app {
     display: flex;
     flex-wrap: wrap;
