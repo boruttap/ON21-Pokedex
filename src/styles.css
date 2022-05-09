@@ -1,6 +1,6 @@
 body {
-    background: white;
-    font-family: "Lato", sans-serif;
+    background: #3aafa9;
+    font-family: "Montserrat", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,9 +9,14 @@ body {
     margin: 0;
 }
 
+.logo {
+    width: 10%;
+    padding: 10px;
+}
+
 .searchField {
         width: 20%;
-        border: 1px solid rgba(128, 21, 21, 0.5);
+        border: 1px solid #2b7a78;
         padding: 20px;
         height: 20px;
         border-radius: 5px 5px 5px 5px;
@@ -33,7 +38,7 @@ body {
     width: 150px;
     height: 150px;
     margin-top: 20px;
-    border: 1px solid rgba(128, 21, 21, 0.5);
+    border: 1px solid #2b7a78;
     border-radius: 1px;
   }
 
@@ -48,7 +53,7 @@ body {
     bottom: 0;
     left: 0;
     margin: 0;
-    background-color: rgba(128, 21, 21, 0.5);
+    background-color: #2b7a78;
     color: #fff;
     text-align: center;
 }
