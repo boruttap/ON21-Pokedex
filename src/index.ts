@@ -56,3 +56,27 @@ function showAllPokemon(pokemonObjects:pokemonData[]) {
     }
 } 
 fetchData()
+
+function searchPokemon(e:any) {
+
+    clearPokedex()
+
+    e.preventDefault()
+      if (e.target.value === "") { 
+        showAllPokemon(pokemonObjects)
+      } else {  
+        let filteredPokemons = pokemonObjects.filter((pokemon) => {
+            return pokemon.name.includes(e.target.value)
+        })
+      console.log(e.target.value)
+      showAllPokemon(filteredPokemons)
+      console.log(filteredPokemons.length)
+    }
+ }
+ 
+    inputSearch!.addEventListener("input", searchPokemon)
+
+function clearPokedex() {
+    container.innerHTML = ""
+}
+    
