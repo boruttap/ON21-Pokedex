@@ -1,6 +1,9 @@
+import typescript from "../node_modules/@rollup/plugin-typescript/types/index"
+
 const container: HTMLElement | any = document.getElementById("app")
 const numberOfPokemon: number = 151
-const inputSearch = document.querySelector('#searchPokemon');
+const inputSearch = document.querySelector('#searchPokemon')
+const formRandom = document.querySelector("#randomPokemon")
 let dataLoaded = false
 
 interface pokemonData {
@@ -90,4 +93,3 @@ function searchPokemon(e:any) {
 function clearPokedex() {
     container.innerHTML = ""
 }
-    
