@@ -3,14 +3,14 @@ import typescript from "../node_modules/@rollup/plugin-typescript/types/index"
 const container: HTMLElement | any = document.getElementById("app")
 const numberOfPokemon: number = 151
 const inputSearch = document.querySelector('#searchPokemon')
-const formRandom = document.querySelector("#randomPokemon")
+const randomPokemon = document.getElementById('randomPokemon')
 let dataLoaded = false
 
 interface pokemonData {
-    name: string;
-    image: string;
-    id: number;
-    type: string;
+    name: string
+    image: string
+    id: number
+    type: string
 }
 
  let pokemonObjects:pokemonData[] = []
@@ -38,9 +38,7 @@ async function getPokemon(id: number): Promise<pokemonData> {
             id: pokemons.id,
             type: pokemonType,
         }
-
     return transformedPokemon
-
 }
 
 const showPokemon = (pokemon: pokemonData): void => {
@@ -93,3 +91,24 @@ function searchPokemon(e:any) {
 function clearPokedex() {
     container.innerHTML = ""
 }
+
+function randomNumber() : number{
+   return Math.floor(Math.random() * numberOfPokemon)
+ }
+
+randomPokemon!.addEventListener("click", showRandomPokemon)
+
+function showRandomPokemon() {
+
+    if (dataLoaded) {
+    clearPokedex()
+    showPokemon(pokemonObjects[randomNumber()] )
+    }
+
+    else {
+        alert("Daten wurden noch nicht geladen.")
+    }
+}
+
+
+

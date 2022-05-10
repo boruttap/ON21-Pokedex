@@ -25,7 +25,7 @@ body {
         outline: none;
       }
 
-.randomButton {
+.randomPokemon {
         background-color: #feffff;
         color: #2b7a78;
         font-weight: bold;
@@ -81,7 +81,7 @@ body {
     color: #2b7a78;
     position: relative;
     padding: 3px;
-    width: 10px;
+    width: 20px;
     height: 10px;
     border: 1px solid #2b7a78;
     border-radius: 5px;
