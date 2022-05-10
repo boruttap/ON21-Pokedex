@@ -4,6 +4,7 @@ const container: HTMLElement | any = document.getElementById("app")
 const numberOfPokemon: number = 151
 const inputSearch = document.querySelector('#searchPokemon')
 const randomPokemon = document.getElementById('randomPokemon')
+const showAll = document.getElementById('showAll')
 let dataLoaded = false
 
 interface pokemonData {
@@ -110,5 +111,10 @@ function showRandomPokemon() {
     }
 }
 
+function showAllAgain() {
+     showAllPokemon(pokemonObjects)
+}
+
+showAll!.addEventListener("click", showAllAgain)
 
 
