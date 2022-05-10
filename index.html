@@ -9,12 +9,14 @@
   <body>
 
     <img class="logo" src="./src/pokemon_logo.svg.png" alt="Logo Pokemon"/>
-    <input type="search" class="searchField" placeholder="Nach Pokemon suchen..." id="searchPokemon" spellcheck="false" autocomplete="false">
+    
+    <input type="search" class="searchField" placeholder="Nach Pokemon (Name) suchen..." id="searchPokemon" spellcheck="false" autocomplete="false">
 
-    <form method="post" id="randomPokemon">
-			<button class="randomButton" id="submitRandom" type="submit" name="submitRandom">Zufälliges Pokémon anzeigen</button>
-		</form>
 
+			<input class="randomPokemon" type="button" id="randomPokemon" value="Welches Pokemon bist du?"></button>
+
+
+    <p id="result"></p>
 
     <div id="app"></div>
     
