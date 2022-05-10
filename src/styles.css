@@ -37,6 +37,18 @@ body {
         outline: none;
 }
 
+.showAll {
+    background-color: #3aafa9;
+    color: #def2f1;
+    font-weight: bold;
+    margin-top: 2px;
+    width: 288px;
+    border: 1px solid #2b7a78;
+    height: 40px;
+    border-radius: 5px 5px 5px 5px;
+    outline: none;
+}
+
 
 #app {
     display: flex;
