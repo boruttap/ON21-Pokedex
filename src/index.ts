@@ -18,7 +18,7 @@ interface pokemonData {
 
 const fetchData = async (): Promise<void> => {
     for (let i = 1; i <= numberOfPokemon; i++) {
-        pokemonObjects.push(await getPokemon(i));
+        pokemonObjects.push(await getPokemon(i))
     }
 
     dataLoaded = true
@@ -74,16 +74,13 @@ function searchPokemon(e:any) {
 
     clearPokedex()
 
-    e.preventDefault()
       if (e.target.value === "") { 
         showAllPokemon(pokemonObjects)
       } else {  
         let filteredPokemons = pokemonObjects.filter((pokemon) => {
             return pokemon.name.includes(e.target.value)
         })
-      console.log(e.target.value)
       showAllPokemon(filteredPokemons)
-      console.log(filteredPokemons.length)
     }
  }
  
@@ -116,5 +113,4 @@ function showAllAgain() {
 }
 
 showAll!.addEventListener("click", showAllAgain)
-
 
